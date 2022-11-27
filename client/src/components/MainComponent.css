@@ -1,0 +1,108 @@
+.Main {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.Inputs {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    background-color: #CFFF8D;    
+    width: 500px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 30px;
+    margin-bottom: 20px;
+}
+
+.label-1 {
+    color: black;
+    padding: 20px;
+}
+
+.input-1 {
+    width: 250px;
+    height: 30px;
+    border: 1px solid blue;
+    border-radius: 10px;
+    font-size: 15px;
+    padding-left: 10px;
+}
+
+button {
+    margin-top: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    background-color: #34495e;
+    align-self: center;
+    margin-bottom: 20px;
+    padding: 10px;
+    width: 300px;
+}
+
+button:hover {
+    color: white;
+    cursor: pointer;
+    border-color: aqua;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+    background-color: darkcyan;
+}
+
+.employee-outer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+}
+
+.employee-inner {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.options{
+    margin: 20px;
+    background-color: lightgreen;
+}
+
+.card-body {
+    background-image: linear-gradient(#7be495, #CFFF8D);
+    padding: 20px;
+    margin: 20px;
+    border-radius: 30px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    width: 400px;
+}
+
+.card-body p {
+    color: #3F0071;
+    font-weight: bold;
+    text-align: left;
+}
+
+.card-body:hover {
+    background-image: radial-gradient(#cff4d2, #7be495);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.8);
+}
+
+.card-body h3 {
+    color: #150050;
+}
+
+.outer-main{
+    display: flex;
+    margin: 50px;
+    justify-content: space-between;
+}
