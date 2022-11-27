@@ -55,7 +55,7 @@ const MainComponent = () => {
 
   // update employee wage
   const updateEmployeeWage = (emp) => {
-    Axios.put(`http://localhost:3001/employee/update`, {
+    Axios.put("http://localhost:3001/employee/update", {
       _id: emp._id,
       name: emp.name,
       age: emp.age,
