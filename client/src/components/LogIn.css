@@ -1,0 +1,86 @@
+.form-outer {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.form-bottom {
+    margin-top: 20px;
+    display: flex;
+    height: 25px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    width: 300px;
+    flex: 1;
+}
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 300px;
+    background-image: linear-gradient(94.3deg, rgba(26, 33, 64, 1) 10.9%, rgba(81, 84, 115, 1) 87.1%);
+    padding: 70px;
+    border-radius: 15px;
+}
+
+p{
+    color: red;
+}
+
+span {
+    color: white;
+    font-size: 11px;
+}
+
+span:hover {
+    font-weight: bold;
+    color: aquamarine;
+    cursor: pointer;
+}
+
+input[type=email],
+input[type=password] {
+    padding-left: 5px;
+    margin-top: 10px;
+    width: 300px;
+    border: 1px solid greenyellow;
+    border-radius: 5px;
+    height: 30px;
+}
+
+label {
+    color: white;
+}
+
+input[type=email]:focus,
+input[type=password]:focus {
+    outline: none;
+    border: 2px solid green;
+}
+
+input[type=button] {
+    border: none;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: white;
+    background-color: transparent;
+    border: 1px solid greenyellow;
+    border-radius: 10px;
+    font-weight: lighter;
+    transition: 0.2s;
+}
+
+h1{
+    color: white;
+}
+
+input[type=button]:hover {
+    font-weight: bold;
+    border: 3px solid greenyellow;
+    cursor: pointer;
+}

@@ -16,7 +16,7 @@ const positions = [
   { label: "Associate", value: "Associate" },
 ];
 
-const MainComponent = () => {
+const MainComponent = (props) => {
   const [msg, setMsg] = useState("Not Saved");
 
   const [Employee, setEmployee] = useState({
@@ -61,7 +61,7 @@ const MainComponent = () => {
       age: emp.age,
       country: emp.country,
       position: emp.position,
-      wage: newWage,
+      wage: newWage
     }).then((response) => {
       setEmployeeList(
         employeeList.map((val) => {
@@ -99,91 +99,94 @@ const MainComponent = () => {
   };
 
   return (
-    <div className="outer-main">
-      <div className="Main">
-        <div className="Inputs">
-          <label className="label-1">Name :</label>
-          <input
-            className="input-1"
-            placeholder="Enter name.."
-            name="name"
-            type="text"
-            onChange={handleChange}
-          />
+    <div>
+      <div className="outer-main">
+        <div className="Main">
+          <div className="Inputs">
+            <label className="label-1">Name :</label>
+            <input
+              className="input-1"
+              placeholder="Enter name.."
+              name="name"
+              type="text"
+              onChange={handleChange}
+            />
 
-          <label className="label-1">Age :</label>
-          <input
-            className="input-1"
-            placeholder="Enter age.."
-            name="age"
-            type="number"
-            onChange={handleChange}
-          />
+            <label className="label-1">Age :</label>
+            <input
+              className="input-1"
+              placeholder="Enter age.."
+              name="age"
+              type="number"
+              onChange={handleChange}
+            />
 
-          <label className="label-1">Country :</label>
-          <input
-            className="input-1"
-            placeholder="Enter country.."
-            name="country"
-            type="text"
-            onChange={handleChange}
-          />
+            <label className="label-1">Country :</label>
+            <input
+              className="input-1"
+              placeholder="Enter country.."
+              name="country"
+              type="text"
+              onChange={handleChange}
+            />
 
-          <label className="label-1">Position :</label>
-          <select className="input-1" name="position" onChange={handleChange}>
-            {positions.map((v, k) => (
-              <option className="options" value={v.value} key={k}>
-                {v.label}
-              </option>
-            ))}
-          </select>
+            <label className="label-1">Position :</label>
+            <select className="input-1" name="position" onChange={handleChange}>
+              {positions.map((v, k) => (
+                <option className="options" value={v.value} key={k}>
+                  {v.label}
+                </option>
+              ))}
+            </select>
 
-          <label className="label-1">Wage :</label>
-          <input
-            className="input-1"
-            placeholder="Enter wage.."
-            name="wage"
-            type="number"
-            onChange={handleChange}
-          />
-          <p>{msg}</p>
-          <button onClick={addEmployee} type="submit">
-            Submit
-          </button>
-        </div>
-        <div>
-          <div className="employee-outer">
-            <button onClick={getEmployees}>Show All Employees</button>
-            <button
-              onClick={() => {
-                setEmployeeList([]);
-              }}
-            >
-              Collapse List
+            <label className="label-1">Wage :</label>
+            <input
+              className="input-1"
+              placeholder="Enter wage.."
+              name="wage"
+              type="number"
+              onChange={handleChange}
+            />
+            <p>{msg}</p>
+            <button onClick={addEmployee} type="submit">
+              Submit
             </button>
           </div>
-          <div className="employee-inner">
-            {employeeList.length !== 0 ? (
-              employeeList.map((employee, key) => {
-                return (
-                  <Card
-                    key={key}
-                    employee={employee}
-                    updateEmployeeWage={updateEmployeeWage}
-                    deleteEmployee={deleteEmployee}
-                    setNewWage={setNewWage}
-                  />
-                );
-              })
-            ) : (
-              <p>No Data</p>
-            )}
+          <div>
+            <div className="employee-outer">
+              <button onClick={getEmployees}>Show All Employees</button>
+              <button
+                onClick={() => {
+                  setEmployeeList([]);
+                }}
+              >
+                Collapse List
+              </button>
+            </div>
+            <div className="employee-inner">
+              {employeeList.length !== 0 ? (
+                employeeList.map((employee, key) => {
+                  return (
+                    <Card
+                      key={key}
+                      employee={employee}
+                      updateEmployeeWage={updateEmployeeWage}
+                      deleteEmployee={deleteEmployee}
+                      setNewWage={setNewWage}
+                    />
+                  );
+                })
+              ) : (
+                <p>No Data</p>
+              )}
+            </div>
           </div>
         </div>
+        <div>
+          <SearchBody />
+        </div>
       </div>
-      <div>
-        <SearchBody/>
-      </div>
+      <button onClick={()=>{props.setIsLogIn(true);}}>Log Out</button>
     </div>
   );
 };

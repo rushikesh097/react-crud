@@ -7,10 +7,12 @@ const cors = require("cors");
 
 app.use(cors());
 const employeeRoute = require("./routes/employee")
+const userRoute = require("./routes/user")
 connectToMongo();
 
 app.use("/employee",employeeRoute);
 
+app.use("/user",userRoute);
 
 app.listen(3001, () => {
   console.log("MongoDB Server Started...");

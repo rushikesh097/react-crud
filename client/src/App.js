@@ -1,18 +1,21 @@
+import { useState } from 'react';
 import './App.css';
-import FooterComponent from './components/FooterComponent';
 import HeaderComponent from './components/HeaderComponent';
+import LogIn from './components/LogIn';
 import MainComponent from './components/MainComponent';
-import NewsComponent from './components/NewsComponent';
 
 
 function App() {
 
+  const [isLogIn,setIsLogIn] = useState(true);
   return (
     <div className="App">
     <HeaderComponent />
-    <MainComponent />
-    {/* <NewsComponent /> */}
-    <FooterComponent />
+    {
+      isLogIn ?
+      <LogIn setIsLogIn={setIsLogIn}/>
+      : <MainComponent setIsLogIn={setIsLogIn}/>
+    }
     </div>
   );
 }
